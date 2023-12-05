@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="REGISTER A NEW ACCOUNT" xml:space="preserve">
+    <value>Ajouter un nouveau compte</value>
+  </data>
+  <data name="HAVE ALREADY AN ACCOUNT" xml:space="preserve">
+    <value>Avez déja un compte</value>
+  </data>
+  <data name="YOUR_ACCOUNT_HAS_BEEN_CREATED_SUCCESSFULY" xml:space="preserve">
+    <value> votre compte a été créé avec succès</value>
+  </data>
+  <data name="CREATE_ACCOUNT" xml:space="preserve">
+    <value>Créer un nouveau compte</value>
+  </data>
+  <data name="ERROR" xml:space="preserve">
+    <value>Erreur</value>
+  </data>
+  <data name="FORGET_PASSWORD" xml:space="preserve">
+    <value>Mot de passe oublié ?</value>
+  </data>
+  <data name="INFO" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="LOGIN_BUTTON" xml:space="preserve">
+    <value>Se connecter</value>
+  </data>
+  <data name="PASSWORD" xml:space="preserve">
+    <value>Mot de passe</value>
+  </data>
+  <data name="PASSWORD_PLACEHOLDER" xml:space="preserve">
+    <value>Mot de passe ...</value>
+  </data>
+  <data name="USERNAME" xml:space="preserve">
+    <value>Nom d'utilisateur</value>
+  </data>
+  <data name="USERNAME_PLACEHOLDER" xml:space="preserve">
+    <value>Nom d'utilisateur ...</value>
+  </data>
+  <data name="NAME" xml:space="preserve">
+    <value>Prénom</value>
+  </data>
+  <data name="NAME_PLACEHOLDER" xml:space="preserve">
+    <value>Saisir le Prénom ...</value>
+  </data>
+  <data name="REPEATPASSWORD" xml:space="preserve">
+    <value>Confirmer le mot de passe</value>
+  </data>
+  <data name="REPEATPASSWORD_PLACEHOLDER" xml:space="preserve">
+    <value>Confimrer le mot de passe ...</value>
+  </data>
+  <data name="EMAIL" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="EMAIL_PLACEHOLDER" xml:space="preserve">
+    <value>saisir l' email...</value>
+  </data>
+  <data name="PHONENUMBER" xml:space="preserve">
+    <value>numéro de téléphone</value>
+  </data>
+  <data name="PHONENUMBER_PLACEHOLDER" xml:space="preserve">
+    <value>numéro de téléphone...</value>
+  </data>
+  <data name="START_BROWSING_OUR_OFFERS_NOW" xml:space="preserve">
+    <value>Consulter nos offres maintenant </value>
+  </data>
+  <data name="START NOW" xml:space="preserve">
+    <value>Commencer </value>
+  </data>
+  <data name="SEND_EMAIL" xml:space="preserve">
+    <value>Envoyer un email  </value>
+  </data>
+  <data name="PLEASE CHECK YOUR EMAIL,WE HAVE SENT YOU A 6 DIGITS NUMBER FOR VERIFICATION" xml:space="preserve">
+    <value>Veulliez vérifier votre courriel, nous vous avons envoyé un numéro de 6 chiffres pour la vérification </value>
+  </data>
+  <data name="VERIFY" xml:space="preserve">
+    <value>Vérifier</value>
+  </data>
+  <data name="PASSWORD_RESET" xml:space="preserve">
+    <value>Réinitialisation du mot de passe</value>
+  </data>
+  <data name="ENTER A NEW SAFE PASSWORD PLEASE!" xml:space="preserve">
+    <value>Entrez un nouveau mot de passe sécurisé s'il vous plaît !</value>
+  </data>
+  <data name="RESET" xml:space="preserve">
+    <value>Réinitialiser</value>
+  </data>
+  <data name="PROFILE" xml:space="preserve">
+    <value>PROFIL</value>
+  </data>
+  <data name="EDIT_ACCOUNT" xml:space="preserve">
+    <value>Modifier le compte</value>
+  </data>
+  <data name="ADDRESS" xml:space="preserve">
+    <value>Adresse</value>
+  </data>
+  <data name="SAVE" xml:space="preserve">
+    <value>Enregister</value>
+  </data>
+  <data name="CANCEL" xml:space="preserve">
+    <value> Annuler</value>
+  </data>
+  <data name="CHOOSE_CARGO" xml:space="preserve">
+    <value> Choisir cargaison </value>
+  </data>
+  <data name="SEARCH" xml:space="preserve">
+    <value>Rechercher</value>
+  </data>
+  <data name="CARGO" xml:space="preserve">
+    <value>Transport marchandises</value>
+  </data>
+  <data name="RELOCATE" xml:space="preserve">
+    <value>Déménager</value>
+  </data>
+  <data name="DELIVERY" xml:space="preserve">
+    <value>Livraison</value>
+  </data>
+  <data name="AIR_FREIGHT" xml:space="preserve">
+    <value>Transport aérien</value>
+  </data>
+  <data name="SEA_FREIGHT" xml:space="preserve">
+    <value>Transport maritime</value>
+  </data>
+  <data name="CLEARANCE" xml:space="preserve">
+    <value>Dédouanement</value>
+  </data>
+  <data name="SEARCH_PLACEHOLDER" xml:space="preserve">
+    <value>Rechercher...</value>
+  </data>
+  <data name="COMPANIES" xml:space="preserve">
+    <value>Companies</value>
+  </data>
+  <data name="DIRECTIONS" xml:space="preserve">
+    <value>Directions</value>
+  </data>
+  <data name="PLACE_ORDER_NOW" xml:space="preserve">
+    <value>Commander maintenant</value>
+  </data>
+  <data name="WHAT_ARE_YOU_GOING_TO_MOVE" xml:space="preserve">
+    <value>Que allez-vous déplacer ?</value>
+  </data>
+  <data name="WHAT_IS_THE_SIZE_OF_THE_SHIPMENT" xml:space="preserve">
+    <value>Quelle est la taille de l'envoi ?</value>
+  </data>
+  <data name="DESCRIBE_THE_SHIPMENT" xml:space="preserve">
+    <value>Décrire l'expédition </value>
+  </data>
+  <data name="I_AM_MOVING_MY_HOME..." xml:space="preserve">
+    <value>Je déménage mon domicile...</value>
+  </data>
+  <data name="TWO_CHARIRS_,_ONE_DOOR_;_2_;_BOXES..." xml:space="preserve">
+    <value>Deux chaises, une porte, 2 boîtes...</value>
+  </data>
+  <data name="IT'S_A_3_METERS_*_METERS_AND_WEIGHT_5KG..." xml:space="preserve">
+    <value>C'est 3 mètres * 3 mètres et un poids de 5 kg...</value>
+  </data>
+  <data name="DELIVERY_LOCATION" xml:space="preserve">
+    <value>Lieu de livraison </value>
+  </data>
+  <data name="PACKAGE_LOCATION" xml:space="preserve">
+    <value>Emplacement du colis </value>
+  </data>
+  <data name="DISTANCE" xml:space="preserve">
+    <value>Distance:</value>
+  </data>
+  <data name="TOTAL_PRICE" xml:space="preserve">
+    <value>Prix Total</value>
+  </data>
+  <data name="DELIVERY_DETAILS" xml:space="preserve">
+    <value>Détails de livraison</value>
+  </data>
+  <data name="ORDER_DETAILS_PAGE" xml:space="preserve">
+    <value>Détails de la commande</value>
+  </data>
+  <data name="CANCEL_ORDER" xml:space="preserve">
+    <value>Annuler la commande</value>
+  </data>
+  <data name="CALL_COMPANY" xml:space="preserve">
+    <value>Appeler la Companie</value>
+  </data>
+  <data name="ORDERS" xml:space="preserve">
+    <value>Les Commandes</value>
+  </data>
+  <data name="TRACK_THE_ORDER" xml:space="preserve">
+    <value>suivre la commande</value>
+  </data>
+  <data name="CONFIRM_THAT_THE_PACKAGE_HAS_ARRIVED" xml:space="preserve">
+    <value>Confirmez que le colis est arrivé</value>
+  </data>
+  <data name="ORDER_QR_CONFIRMATION" xml:space="preserve">
+    <value>Confirmation</value>
+  </data>
+  <data name="DELIVERY_RECIEVED" xml:space="preserve">
+    <value>Livraison reçue</value>
+  </data>
+  <data name="TOTAL" xml:space="preserve">
+    <value>Total:</value>
+  </data>
+  <data name="BACK_TO_HOME" xml:space="preserve">
+    <value>Retour à l'accueil</value>
+  </data>
+  <data name="THE_ORDER_HAS_BEEN_CONFIRMED" xml:space="preserve">
+    <value>La commande a été confirmée</value>
+  </data>
+  <data name="CURRENT_LOCATION_PAGE" xml:space="preserve">
+    <value>Localisation Currente</value>
+  </data>
+  <data name="NOTIFICATIONS" xml:space="preserve">
+    <value>Notifications</value>
+  </data>
+  <data name="TRACKING" xml:space="preserve">
+    <value>Suivi</value>
+  </data>
+</root>

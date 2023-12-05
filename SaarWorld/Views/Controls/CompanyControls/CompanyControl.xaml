@@ -1,0 +1,42 @@
+ <Border xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        x:Class="SaarWorld.Views.Controls.CompanyControls.CompanyControl"
+        Grid.Row="0" 
+        Grid.Column="1" 
+        Stroke="#E0D3D0"
+        StrokeThickness="5"
+        StrokeShape="RoundRectangle 8,8,8,8"
+        InputTransparent="True"
+        
+        BackgroundColor="{StaticResource White}">
+    <Frame BackgroundColor="#ffffff" InputTransparent="True">
+        <HorizontalStackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Border HorizontalOptions="Start" 
+                HeightRequest="120" 
+                WidthRequest="120"
+                Stroke="#dfc4cd"
+                StrokeThickness="2"
+                StrokeShape="RoundRectangle 16,16,16,16">
+                <Image HorizontalOptions="Center" 
+                   HeightRequest="100" 
+                   WidthRequest="100" 
+                   Source="{Binding LogoUrl}"/>
+            </Border>
+            <VerticalStackLayout>
+                <Label Padding="10,10,10,10"
+                   Text="{Binding Name}"
+                   FontFamily="Cairo"
+                   FontSize="19" TextColor="#1D1715" />
+                <Label Padding="10,-6,10,10"
+                   FontFamily="Cairo"
+                   FontSize="12"
+                   FontAutoScalingEnabled="True"
+                   FlowDirection="LeftToRight"
+                   TextColor="#1D1715"
+                   WidthRequest="220" 
+                   Text="{Binding Address}">
+                </Label>
+            </VerticalStackLayout>
+        </HorizontalStackLayout>
+    </Frame>
+</Border>

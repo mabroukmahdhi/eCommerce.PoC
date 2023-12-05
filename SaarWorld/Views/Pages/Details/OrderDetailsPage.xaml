@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SaarWorld.Views.Pages.Details.OrderDetailsPage"
+             Title="{Binding Name}"
+             BackgroundColor="#f8f8f8">
+
+    <ScrollView Padding="10,10,10,0">
+        <VerticalStackLayout Padding="5,5,5,5" Spacing="14">
+            <Border BackgroundColor="#f8e3e0" HeightRequest="70"
+                    WidthRequest="360"
+                   VerticalOptions="Center" HorizontalOptions="Center">
+                <Label Text="{Binding State}" FontAttributes="Bold"
+                       TextColor="#EA5E47"
+                       VerticalOptions="Center" HorizontalOptions="Center"/>
+            </Border>
+
+            <HorizontalStackLayout Spacing="5">
+                <Image Source="locone"/>
+                <Label Text="{Binding PackageLocation}" TextColor="#237056"
+                       VerticalOptions="Center" HorizontalOptions="Center"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Spacing="9">
+                <Image Source="loctwo"/>
+                <Label Text="{Binding TargetLocation}" TextColor="#9A0034"
+                       VerticalOptions="Center" HorizontalOptions="Center"/>
+            </HorizontalStackLayout>
+
+            <Label Text="{Binding MoveLabelText}" TextColor="{StaticResource Dark}"
+                   FontFamily="Cairo"
+                   FontSize="20"/>
+            
+            <Label Text="{Binding MoveLocation}" TextColor="{StaticResource Dark}"
+                   FontFamily="Cairo"
+                   FontSize="17"/>
+
+            <Label Text="{Binding ShipmentLabelText}" TextColor="{StaticResource Dark}"
+                   FontFamily="Cairo"
+                   FontSize="20"/>
+            
+            <Label Text="{Binding Shipment}" TextColor="{StaticResource Dark}"
+                   FontFamily="Cairo"
+                   FontSize="17"/>
+
+            <Label Text="{Binding ShipmentSizeLabelText}" TextColor="{StaticResource Dark}"
+                   FontFamily="Cairo"
+                   FontSize="20"/>
+
+            <Label Text="{Binding ShipmentSize}" TextColor="{StaticResource Dark}"
+                   FontFamily="Cairo"
+                   FontSize="17"/>
+
+
+            <HorizontalStackLayout Spacing="90">
+                <VerticalStackLayout>
+                    <Label Text="{ Binding PriceLabelText}" FontSize="25" FontFamily="Cairo"/>
+                    <Label Text="{Binding Price , StringFormat='{0:C2}'}" FontAttributes="Bold"
+                           TextColor="#237056" FontSize="35" FontFamily="Cairo"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <Label Text="{Binding DistanceLabelText}" FontSize="25" FontFamily="Cairo"/>
+                    <Label Text="{Binding Distance, StringFormat='{0} KM'}" 
+                           TextColor="#9A0034" FontSize="35" FontFamily="Cairo"/>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Spacing="20">
+                <Button Text="Confirm Order"
+                         Clicked="ConfirmOrder"
+                        TextColor="White"
+                        BackgroundColor="{StaticResource Primary}"
+                        WidthRequest="170"
+                        HeightRequest="55"
+                        FontAttributes="Bold"
+                        FontSize="12"/>
+                
+                <Button Text="{Binding ButtonCancelOrder}"
+                         Clicked="CancelOrder"
+                        TextColor="Black"
+                        BackgroundColor="#F5C1C1"
+                        WidthRequest="170"
+                        HeightRequest="55"
+                        FontAttributes="Bold"
+                        FontSize="12"/>
+            </HorizontalStackLayout>
+            
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

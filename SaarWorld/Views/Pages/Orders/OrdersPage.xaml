@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SaarWorld.Views.Pages.Orders.OrdersPage"
+             xmlns:vm="clr-namespace:SaarWorld.Services.ViewModels"
+             xmlns:models="clr-namespace:SaarWorld.Models.Orders"
+             Title="{Binding OrdersPage}"
+             BackgroundColor="#ededed">
+    <ScrollView>
+        <VerticalStackLayout>
+            <ActivityIndicator Grid.Row="0" 
+                               HeightRequest="80"
+                               WidthRequest="80"
+                               IsVisible="{Binding IsBusy}"
+                               IsRunning="{Binding IsBusy}" 
+                               Color="{StaticResource Primary}" />
+            <CollectionView ItemsSource="{Binding OrderList}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Order">
+                        <Frame Margin="10" BackgroundColor="#F6F6F6" BorderColor="Transparent" >
+                            <HorizontalStackLayout Spacing="7" Margin="-10">
+                                <Image Source="orderapproved.png"
+                                       VerticalOptions="Center"
+                                       HorizontalOptions="Start">
+                                    <Image.Triggers>
+                                            <DataTrigger TargetType="Image" Binding="{Binding Completed}" Value="True">
+                                                <Setter Property="Source">
+                                                    <Setter.Value>
+                                                        <FileImageSource File="orderapproved.png" />
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </DataTrigger>
+                                            <DataTrigger TargetType="Image" Binding="{Binding Completed}" Value="False">
+                                                <Setter Property="Source">
+                                                    <Setter.Value>
+                                                        <FileImageSource File="orderpending.png" />
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </DataTrigger>
+                                        </Image.Triggers>
+                                    </Image>
+                                    <Label Text="{Binding Name}"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"
+                                       FontFamily="Cairo"
+                                       TextColor="#0E0C16"
+                                       FontAttributes="Bold"
+                                       FontSize="20"
+                                       WidthRequest="255"/>
+                                <Label TextColor="#237056" 
+                                       Text="{Binding Price , StringFormat='{0:C2}'}"
+                                       FontFamily="Cairo"
+                                       FontAttributes="Bold"
+                                       FontSize="14"
+                                       HorizontalOptions="Start"
+                                       VerticalOptions="Center"/>
+                            </HorizontalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

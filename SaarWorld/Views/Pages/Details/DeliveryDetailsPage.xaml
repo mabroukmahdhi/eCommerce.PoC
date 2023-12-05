@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SaarWorld.Views.Pages.Details.DeliveryDetailsPage"
+             xmlns:local="clr-namespace:SaarWorld.Services.Behaviors"
+             Title="{Binding DeliveryDetailsLabelText}"
+             BackgroundColor="#f8f8f8">
+    
+    <ScrollView Padding="10,10,10,0">
+        <VerticalStackLayout Padding="5,5,5,5" Spacing="10">
+            <Label Text="{Binding DirectionsLabelText}" TextColor="{StaticResource Dark}"
+                   FontFamily="Cairo"
+                   FontSize="20"/>
+            
+            <HorizontalStackLayout Spacing="5">
+                <Image Source="locone"/>
+                <Border Stroke="#237056" StrokeThickness="1"
+                        StrokeShape="RoundRectangle 6,6,6,6">
+                    <Entry
+                        PlaceholderColor="#237056"
+                        Opacity="80"
+                        Placeholder="{Binding  PackageLocationPlaceholder}"
+                        WidthRequest="290"
+                        Margin="10,0,10,0"
+                        FontFamily="Cairo"
+                        FontAttributes="Bold"
+                       
+                        TextChanged="StartLocationTextChanged"
+                        FontSize="16"
+                        Text="{Binding PackageLocation}"
+                        ClearButtonVisibility="WhileEditing">
+                        <!--<Entry.GestureRecognizers>
+                             <TapGestureRecognizer Command="{Binding GoToCurrentLocationCommand}" />
+                         </Entry.GestureRecognizers>--> 
+                    </Entry>
+                </Border>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Spacing="9">
+                <Image Source="loctwo"/>
+                <Border Stroke="#9A0034" StrokeThickness="1"
+                        StrokeShape="RoundRectangle 6,6,6,6">
+                    <Entry
+                        PlaceholderColor="#9A0034"
+                        Opacity="80"
+                        
+                        Placeholder="{Binding DeliveryLocationPlaceholder}"
+                        WidthRequest="290"
+                        Margin="10,0,10,0"
+                        FontAttributes="Bold"
+                        FontFamily="Cairo"
+                        FontSize="16"
+                        Text="{Binding TargetLocation}"
+                        TextChanged="TargetLocationTextChanged"
+                        ClearButtonVisibility="WhileEditing">
+                        <!--<Entry.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding GoToTargetLocationCommand}" />
+                        </Entry.GestureRecognizers>-->
+                    </Entry>
+                </Border>
+            </HorizontalStackLayout>
+
+            <Border Stroke="{StaticResource Primary}"
+                    StrokeThickness="4"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"
+                    StrokeShape="RoundRectangle 6,6,6,6">
+                <Map x:Name="detailsMap" HeightRequest="300" IsZoomEnabled="True"/>
+            </Border>
+
+            <Label Text="{Binding MoveLabelText}" TextColor="{StaticResource Dark}"
+                   FontFamily="Cairo"
+                   FontSize="20"/>
+
+            <Border Stroke="#9a9a9e"
+                    StrokeThickness="1"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"
+                    StrokeShape="RoundRectangle 6,6,6,6">
+                <Entry 
+                    PlaceholderColor="#9a9a9e"
+                    FontFamily="Cairo"
+                    HorizontalTextAlignment="Start"
+                    Margin="2"
+                    Opacity="80"
+                    Text="{Binding MoveLocation}"
+                    Placeholder="{Binding MovePlaceholder}"
+                    WidthRequest="360"
+                    FontAttributes="Bold"
+                    FontSize="16"
+                    ClearButtonVisibility="WhileEditing"/>
+            </Border>
+
+            <Label Text="{Binding ShipmentLabelText}" TextColor="{StaticResource Dark}"
+                   FontFamily="Cairo"
+                   FontSize="20"/>
+
+            <Border Stroke="#9a9a9e"
+                    StrokeThickness="1"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"
+                    StrokeShape="RoundRectangle 6,6,6,6">
+                <Entry 
+                    PlaceholderColor="#9a9a9e"
+                    FontFamily="Cairo"
+                    HorizontalTextAlignment="Start"
+                    Margin="2"
+                    Opacity="80"
+                    TextChanged="ShipmentTextChanged"
+                    Placeholder="{Binding ShipmentPlaceholder}"
+                    WidthRequest="360"
+                    FontAttributes="Bold"
+                    FontSize="16"
+                    ClearButtonVisibility="WhileEditing"/>
+            </Border>
+
+            <Label Text="{Binding ShipmentSizeLabelText}" TextColor="{StaticResource Dark}"
+                   FontFamily="Cairo"
+                   FontSize="20"/>
+
+            <Border Stroke="#9a9a9e"
+                    StrokeThickness="1"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"
+                    StrokeShape="RoundRectangle 6,6,6,6">
+                <Entry 
+                    PlaceholderColor="#9a9a9e"
+                    FontFamily="Cairo"
+                    HorizontalTextAlignment="Start"
+                    Margin="2"
+                    Opacity="80"
+                    Text="{Binding Shipmentsize }"
+                    Placeholder="{Binding ShipmentsizePlaceholder}"
+                    WidthRequest="360"
+                    FontAttributes="Bold"
+                    FontSize="16"
+                    ClearButtonVisibility="WhileEditing"/>
+            </Border>
+
+            <HorizontalStackLayout Spacing="90">
+                <VerticalStackLayout>
+                    <Label Text="{Binding PriceLabelText}" FontSize="25" FontFamily="Cairo"/>
+                    <Label x:Name="PriceLabel" FontAttributes="Bold"
+                           TextColor="#237056" FontSize="35" FontFamily="Cairo"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <Label Text="{Binding DistanceLabelText}"
+                           FontSize="18" FontFamily="Cairo"/>
+                    <Label x:Name="DistanceLabel" FontAttributes="Bold"
+                           TextColor="#9A0034" FontSize="35" FontFamily="Cairo"/>
+                </VerticalStackLayout> 
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Spacing="90">
+                
+                <VerticalStackLayout>
+                    <Label Text="Duration"
+                FontSize="18" FontFamily="Cairo"/>
+                    <Label x:Name="DurationLabel" FontAttributes="Bold"
+                TextColor="#9A0034" FontSize="35" FontFamily="Cairo"/>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+
+            <Button ImageSource="placeorder.png" Text="{Binding ButtonPlaceOrderText}"
+                    Command="{Binding PlaceOrderAsyncCommand}"></Button>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

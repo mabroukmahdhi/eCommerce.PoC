@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SaarWorld.Views.Pages.Companies.CompanyPage" 
+             xmlns:companies="clr-namespace:SaarWorld.Views.Controls.CompanyControls" 
+             Title="{Binding  CompaniesLabelText}"
+             BackgroundColor="#f8f8f8">
+    <VerticalStackLayout Padding="10">
+
+        <!-- Search Entry -->
+        <Border Stroke="#5F021F"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 18,18,18,18">
+            <Entry PlaceholderColor="#5F021F"
+                       Opacity="80"
+                       Placeholder="{Binding SearchPlaceholder}"
+                       Margin="10,0,10,0"
+                       FontAttributes="Bold"
+                       FontSize="16"
+                       ClearButtonVisibility="WhileEditing" />
+        </Border>
+        <!-- You can bind Text to a property in ViewModel for the actual search -->
+
+        <!-- CollectionView -->
+        <CollectionView ItemsSource="{Binding Companies}"
+                        SelectionChangedCommand="{Binding CompanySelectedCommand}"
+                        SelectionMode="Single"
+                        SelectedItem="{Binding SelectedCompany,Mode=TwoWay}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <companies:CompanyControl>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Selected">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="Transparent" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </companies:CompanyControl>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </VerticalStackLayout>
+
+</ContentPage>

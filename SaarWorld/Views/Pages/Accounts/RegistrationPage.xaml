@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SaarWorld.Views.Pages.Accounts.RegistrationPage" 
+             Title="RegistrationPage"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False">
+    <ScrollView>
+        <Grid>
+        <VerticalStackLayout BackgroundColor="White"
+            Spacing="20"
+            Padding="10,0,10,0"
+            VerticalOptions="Start">
+            <Label
+                Text="{ Binding RegisteraccountLabelText}"
+                SemanticProperties.HeadingLevel="Level1"
+                FontAttributes="Bold"
+                TextColor="{StaticResource Primary}"
+                FontSize="25"
+                FontFamily="Cairo"
+                Margin="0,10,0,5"/>
+
+            <Label Text="{Binding NameLabelText}"
+                SemanticProperties.HeadingLevel="Level1"
+                TextColor="{StaticResource Black}"
+                FontSize="20"
+                FontAttributes="Bold"
+                Margin="0,0,0,-15"/>
+
+            <Border StrokeShape="RoundRectangle 5,5,5,5" Stroke="{StaticResource Dark}">
+                <Entry
+                    Margin="5,0,0,0"
+                    Placeholder="{Binding NamePlaceholder}" IsEnabled="{Binding CanEdit}"
+                    TextColor="Black"/>
+            </Border>
+            <Label Text="{Binding UserNameLabelText}"
+                SemanticProperties.HeadingLevel="Level1"
+                TextColor="{StaticResource Black}"
+                FontSize="20"
+                FontAttributes="Bold"
+                Margin="0,0,0,-15"/>
+
+            <Border StrokeShape="RoundRectangle 5,5,5,5" Stroke="{StaticResource Dark}">
+                <Entry
+                    Margin="5,0,0,0"
+                   Placeholder="{Binding UserNamePlaceholder}" IsEnabled="{Binding CanEdit}"
+                    TextColor="Black"/>
+            </Border>
+
+            <Label Text="{Binding EmailLabelText} "
+                SemanticProperties.HeadingLevel="Level1"
+                TextColor="{StaticResource Black}"
+                FontSize="20"
+                FontAttributes="Bold"
+                Margin="0,0,0,-15"/>
+
+            <Border StrokeShape="RoundRectangle 5,5,5,5" Stroke="{StaticResource Dark}">
+                <Entry
+                    Margin="5,0,0,0"
+                    Placeholder="{Binding EmailPlaceholder}" IsEnabled="{Binding CanEdit}"
+                    TextColor="Black"/>
+            </Border>
+
+            <Label Text="{Binding PhoneNumberLabelText}"
+                SemanticProperties.HeadingLevel="Level1"
+                TextColor="{StaticResource Black}"
+                FontSize="20"
+                FontAttributes="Bold"
+                Margin="0,0,0,-15"/>
+            <Border StrokeShape="RoundRectangle 5,5,5,5" Stroke="{StaticResource Dark}">
+                <Entry
+                    Margin="5,0,0,0"
+                    Placeholder="{Binding PhoneNumberPlaceholder}" IsEnabled="{Binding CanEdit}"
+                    TextColor="Black"/>
+            </Border>
+
+            <Label Text=" {Binding PasswordLabelText}"
+                SemanticProperties.HeadingLevel="Level1"
+                TextColor="{StaticResource Black}"
+                FontSize="20"
+                FontAttributes="Bold"
+                Margin="0,0,0,-15"/>
+
+            <Border StrokeShape="RoundRectangle 5,5,5,5" Stroke="{StaticResource Dark}">
+                <Entry
+                    Margin="5,0,0,0"
+                    Placeholder="{Binding PasswordPlaceholder}" IsEnabled="{Binding CanEdit}"
+                    TextColor="Black"
+                     IsPassword="true"/>
+            </Border>
+
+            <Label Text="{Binding RepeatpasswordLabelText}"
+                SemanticProperties.HeadingLevel="Level1"
+                TextColor="{StaticResource Black}"
+                FontSize="20"
+                FontAttributes="Bold"
+                Margin="0,0,0,-15"/>
+
+            <Border StrokeShape="RoundRectangle 5,5,5,5" Stroke="{StaticResource Dark}">
+                <Entry
+                    Margin="5,0,0,0"
+                   Placeholder="{Binding RepeatpasswordPlaceholder}" IsEnabled="{Binding CanEdit}"
+                    TextColor="Black"
+                    IsPassword="true"/>
+            </Border>
+            
+
+
+            <Button
+                Text="{Binding  RegisterButtonText}"
+                BackgroundColor="{StaticResource ButtonPrimary}"
+                FontFamily="Cairo"
+                FontSize="Large"
+                TextColor="White"
+                HorizontalOptions="FillAndExpand"
+                IsEnabled="{Binding CanEdit}"
+                Command="{Binding RegisterAsyncCommand}"
+              />
+
+            <Button
+                BorderWidth="1"
+                BorderColor="{StaticResource Primary}"
+                Text="{Binding LoginButtonText}"
+                BackgroundColor="{StaticResource Secondary}"
+                FontFamily="Cairo"
+                FontSize="Medium"
+                TextColor="{StaticResource Primary}"
+                HorizontalOptions="FillAndExpand"
+                IsEnabled="{Binding CanEdit}"
+                Command="{Binding GoToLoginAsyncCommand}"
+                />
+        </VerticalStackLayout>
+            <ActivityIndicator Grid.Row="0" IsRunning="{Binding IsBusy}" Color="{StaticResource Primary}" /> 
+          </Grid>
+    </ScrollView>
+</ContentPage>

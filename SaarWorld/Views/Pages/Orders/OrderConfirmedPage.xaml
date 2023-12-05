@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SaarWorld.Views.Pages.Orders.OrderConfirmedPage"
+             Title="{Binding OrderQRConfirmationLabelText}">
+    <VerticalStackLayout Spacing="50">
+        
+        <Label FontFamily="Cairo" TextColor="#0E0C16"
+               Padding="10"
+               Margin="20"
+               Text="{Binding ConfirmedPackageLabelText}"
+               FontSize="30" HorizontalTextAlignment="Center" 
+               VerticalOptions="Center" HorizontalOptions="Center"/>
+
+        <Image Source="orderconfirm.png" 
+               VerticalOptions="Center" HorizontalOptions="Center"/>
+
+        <Button BorderColor="{StaticResource Primary}"
+                BorderWidth="1"
+                BackgroundColor="Transparent"
+                WidthRequest="360"
+                TextColor="{StaticResource Primary}"
+                Text="{Binding ButtonBackToHome}"
+                Command="{Binding BackToHomeAsyncCommand}"/>
+    </VerticalStackLayout>
+</ContentPage>

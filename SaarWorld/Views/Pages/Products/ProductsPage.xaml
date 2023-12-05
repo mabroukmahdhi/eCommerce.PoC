@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SaarWorld.Views.Pages.Products.ProductsPage" 
+             xmlns:products="clr-namespace:SaarWorld.Views.Controls.ProductControls"
+             Title="Products">
+
+    <Grid VerticalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- You can bind Text to a property in ViewModel for the actual search -->
+        <Border Grid.Row="0" Stroke="#5F021F"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 18,18,18,18">
+            <Entry PlaceholderColor="#5F021F"
+                       Opacity="80"
+                       Placeholder="{Binding SearchPlaceholder}"
+                       Margin="10,0,10,0"
+                       FontAttributes="Bold"
+                       FontSize="16"
+                       ClearButtonVisibility="WhileEditing" />
+        </Border>
+
+        <!-- CollectionView -->
+        <CollectionView Grid.Row="1"  ItemsSource="{Binding Products}" 
+                        VerticalOptions="FillAndExpand"
+                        SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <products:ProductControl >
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Selected">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="Transparent" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </products:ProductControl>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+
+        <Frame  Grid.Row="2"  BackgroundColor="{StaticResource Primary}" Padding="10" HorizontalOptions="FillAndExpand">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/> 
+                </Grid.ColumnDefinitions>
+                <HorizontalStackLayout Spacing="3">
+                    <Label Grid.Column="0" 
+                           Text="{Binding TotalPrice,StringFormat='Total: {0}'}" 
+                           TextColor="White" 
+                           VerticalOptions="CenterAndExpand" 
+                           HorizontalOptions="FillAndExpand" 
+                           FontAttributes="Bold"/>
+                    <Label Text="{Binding Currency}" 
+                           TextColor="White" 
+                           VerticalOptions="CenterAndExpand" 
+                           HorizontalOptions="FillAndExpand" 
+                           FontAttributes="Bold"/>
+                </HorizontalStackLayout>
+                <Button Grid.Column="1" Text="Check out"
+                        Command="{Binding ConfirmOrderCommand}"
+                        TextColor="{StaticResource Primary}"
+                        BackgroundColor="#F5C1C1" 
+                        FontAttributes="Bold"
+                        FontSize="Large"/>
+            </Grid> 
+        </Frame>
+    </Grid>
+</ContentPage>

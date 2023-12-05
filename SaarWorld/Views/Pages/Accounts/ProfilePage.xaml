@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SaarWorld.Views.Pages.Accounts.ProfilePage"
+             Title="ProfilePage">
+    <VerticalStackLayout>
+        <Frame Margin="5" BorderColor="Transparent">
+            <HorizontalStackLayout>
+                <Image Source="defaultpfp.png"/>
+                <VerticalStackLayout>
+                    <Label Text="NourEldin mohamed sammer"
+                       FontFamily="Cairo" FontSize="16"
+                       Padding="10" TextColor="{StaticResource Primary}"
+                       FontAttributes="Bold"/>
+                    
+                    <Label Text="NourEldin1234"
+                       FontFamily="Cairo" FontSize="13"
+                       Padding="10,-4,10,10" TextColor="#5F021F"
+                       FontAttributes="Bold" Opacity="0.5"/>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+        </Frame>
+
+        <HorizontalStackLayout Margin="15">
+            <Image Source="mail.png"/>
+            <Label Text="crusherworkmail@gmail.com" Margin="10"
+                   TextColor="#5F021F" FontAttributes="Bold"/>
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout Margin="15" Padding="0,-20,0,0">
+            <Image Source="phone.png"/>
+            <Label Text="010101010100" Margin="10"
+                   TextColor="#5F021F" FontAttributes="Bold"/>
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout Margin="15" Padding="0,-25,0,0">
+            <Image Source="location.png"/>
+            <Label Text="Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+Lorem Ipsum has been the industry's standard dummy" Margin="10"
+                   TextColor="#5F021F" WidthRequest="340"/>
+        </HorizontalStackLayout>
+
+        <VerticalStackLayout Margin="10" Padding="5" Spacing="10">
+            <Button
+                Text="{Binding EditAccountButtonText}"
+               Command="{Binding GoToEditProfileAsyncCommand}"
+                BackgroundColor="{StaticResource ButtonPrimary}"
+                FontFamily="Cairo"
+                FontSize="Large"
+                TextColor="White"
+                HorizontalOptions="FillAndExpand"/>
+
+            <Button
+                x:Name="deleteAccount"
+                BorderWidth="1"
+                BorderColor="Transparent"
+                Text="Delete Account"
+                BackgroundColor="#F5C1C1"
+                FontFamily="Cairo"
+                FontSize="Medium"
+                TextColor="Black"
+                HorizontalOptions="FillAndExpand"/>
+
+            <Button
+                x:Name="logoutButton"
+                BorderWidth="1"
+                BorderColor="Transparent"
+                Text="Logout"
+                Command="{Binding LogoutAsnycCommand}"
+                BackgroundColor="#F5C1C1"
+                FontFamily="Cairo"
+                FontSize="Medium"
+                TextColor="Black"
+                HorizontalOptions="FillAndExpand"
+                />
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

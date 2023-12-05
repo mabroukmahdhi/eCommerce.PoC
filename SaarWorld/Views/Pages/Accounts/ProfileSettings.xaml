@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SaarWorld.Views.Pages.Accounts.ProfileSettings"
+             Title="ProfileSettings"
+             Shell.NavBarIsVisible="False">
+    <ScrollView>
+        <VerticalStackLayout 
+            BackgroundColor="White"
+            Spacing="20"
+            Padding="10,30,10,0"
+            VerticalOptions="Start">
+
+            <Label Text="{Binding NameLabelText}"
+                SemanticProperties.HeadingLevel="Level1"
+                TextColor="{StaticResource Black}"
+                FontSize="20"
+                FontAttributes="Bold"
+                Margin="0,0,0,-15"/>
+
+            <Border StrokeShape="RoundRectangle 5,5,5,5" Stroke="{StaticResource Dark}">
+                <Entry
+                   Text="{Binding NamePlaceholder}"
+                    Margin="5,0,0,0"
+                    Placeholder="John Doe"
+                    TextColor="Black"/>
+            </Border>
+
+            <Label Text="{Binding UserNameLabelText}"
+                SemanticProperties.HeadingLevel="Level1"
+                TextColor="{StaticResource Black}"
+                FontSize="20"
+                FontAttributes="Bold"
+                Margin="0,0,0,-15"/>
+
+            <Border StrokeShape="RoundRectangle 5,5,5,5" Stroke="{StaticResource Dark}">
+                <Entry
+                    Text="{Binding UserNamePlaceholder}"
+                    Margin="5,0,0,0"
+                    Placeholder="John Doe"
+                    TextColor="Black"/>
+            </Border>
+
+            <Label Text="{Binding EmailLabelText}"
+                SemanticProperties.HeadingLevel="Level1"
+                TextColor="{StaticResource Black}"
+                FontSize="20"
+                FontAttributes="Bold"
+                Margin="0,0,0,-15"/>
+
+            <Border StrokeShape="RoundRectangle 5,5,5,5" Stroke="{StaticResource Dark}">
+                <Entry
+                    Text="{Binding EmailPlaceholder}"
+                    Margin="5,0,0,0"
+                    Placeholder="John Doe"
+                    TextColor="Black"/>
+            </Border>
+
+            <Label Text="{Binding PhoneNumberLabelText}"
+                SemanticProperties.HeadingLevel="Level1"
+                TextColor="{StaticResource Black}"
+                FontSize="20"
+                FontAttributes="Bold"
+                Margin="0,0,0,-15"/>
+
+            <Border StrokeShape="RoundRectangle 5,5,5,5" Stroke="{StaticResource Dark}">
+                <Entry
+                   Text="{Binding PhoneNumberPlaceholder}"
+                    Margin="5,0,0,0"
+                    Placeholder="John Doe"
+                    TextColor="Black"/>
+            </Border>
+
+            <Label Text="{Binding AddressLabelText}"
+                SemanticProperties.HeadingLevel="Level1"
+                TextColor="{StaticResource Black}"
+                FontSize="20"
+                FontAttributes="Bold"
+                Margin="0,0,0,-15"/>
+
+            <Border StrokeShape="RoundRectangle 5,5,5,5" Stroke="{StaticResource Dark}">
+                <Entry
+                   Text="{Binding AddressPlaceholder}"
+                    Margin="5,0,0,0"
+                    HeightRequest="160"
+                    Placeholder="John Doe"
+                    TextColor="Black"/>
+            </Border>
+
+            <HorizontalStackLayout Spacing="10">
+                <Button
+                Text="{Binding SaveButtonText}"
+                BackgroundColor="#237056"
+                WidthRequest="180"
+                FontFamily="Cairo"
+                FontSize="Large"
+                TextColor="White"
+                HorizontalOptions="FillAndExpand"
+                Command="{Binding EditProfileAsyncCommand}"/>
+
+                <Button
+                Text="{Binding CancelButtonText}"
+                BackgroundColor="#F5C1C1"
+                FontFamily="Cairo"
+                WidthRequest="180"
+                FontSize="Large"
+                TextColor="Black"
+                HorizontalOptions="FillAndExpand"
+                Command="{Binding CancelEditAsyncCommand}"/>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

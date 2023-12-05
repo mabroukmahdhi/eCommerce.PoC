@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SaarWorld.Views.Pages.Accounts.LoginPage" 
+             Title="AuthenticationPage"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False">
+    <ScrollView>
+        <Grid>
+            <StackLayout BackgroundColor="White"
+                         Spacing="25"
+                         Padding="10,0,10,0"
+                         VerticalOptions="Center">
+                <Image Source="packageimage.png"    
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"/>
+                <Label Text="{Binding UserNameLabelText}"
+                       SemanticProperties.HeadingLevel="Level1"
+                       FontAttributes="Bold"
+                       TextColor="Black"
+                       FontSize="25"
+                       Margin="0,0,0,-15"/>
+                <Border StrokeShape="RoundRectangle 5,5,5,5" Padding="5,0,5,0">
+                    <Entry Placeholder="{Binding UserNamePlaceholder}"
+                           Text="{Binding UserName}" 
+                           IsEnabled="{Binding CanEdit}" 
+                           TextColor="Black" />
+                </Border>
+                <Label Text="{Binding PasswordLabelText}"
+                       SemanticProperties.HeadingLevel="Level1"
+                       FontAttributes="Bold"
+                       TextColor="Black"
+                       FontSize="25" 
+                       Margin="0,0,0,-15"/>
+                <Border StrokeShape="RoundRectangle 5,5,5,5" Padding="5,0,5,0">
+                    <Entry Placeholder="{Binding PasswordPlaceholder}"
+                           Text="{Binding Password}"
+                           TextColor="Black"
+                           IsEnabled="{Binding CanEdit}"
+                           IsPassword="true" />
+                </Border>
+                <Label HorizontalOptions="Center" 
+                       Text="{Binding ForgetPasswordLabelText}" 
+                       TextDecorations="Underline"
+                       TextColor="Blue">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ResetPasswordCommand}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Button Text="{Binding LoginButtonText}"
+                        BackgroundColor="{StaticResource ButtonPrimary}"
+                        FontFamily="Cairo"
+                        FontSize="Large"
+                        TextColor="White"
+                        HorizontalOptions="FillAndExpand"
+                        IsEnabled="{Binding CanEdit}"
+                        Command="{Binding LoginAsyncCommand}"
+                />
+            </StackLayout>
+            <ActivityIndicator Grid.Row="0" 
+                               HeightRequest="80"
+                               WidthRequest="80"
+                               IsRunning="{Binding IsBusy}" 
+                               Color="{StaticResource Primary}" />
+        </Grid>
+    </ScrollView>
+</ContentPage>

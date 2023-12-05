@@ -396,3 +396,5 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/SaarWorld/.DS_Store
+/SaarWorld/Resources/.DS_Store

@@ -1,0 +1,171 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net7.0-android;net7.0-ios</TargetFrameworks>
+		<OutputType>Exe</OutputType>
+		<RootNamespace>SaarWorld</RootNamespace>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<ImplicitUsings>disable</ImplicitUsings>
+
+		<!-- Display name -->
+		<ApplicationTitle>SaarWorld</ApplicationTitle>
+
+		<!-- App Identifier -->
+		<ApplicationId>com.sgl.saarworld</ApplicationId>
+		<ApplicationIdGuid>8a972f13-b8ad-4d50-a592-133b931b9bbf</ApplicationIdGuid>
+
+		<!-- Versions -->
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationVersion>1</ApplicationVersion>
+
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion> 
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">33.0</SupportedOSPlatformVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
+	  <CreatePackage>false</CreatePackage>
+	  <CodesignKey>Apple Development: tabkayamen@gmail.com (4G4874LNNA)</CodesignKey>
+	  <MtouchDebug>true</MtouchDebug>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-ios|AnyCPU'">
+	  <CreatePackage>false</CreatePackage>
+	</PropertyGroup>
+	<ItemGroup>
+		<!-- App Icon -->
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+
+		<!-- Splash Screen -->
+		<MauiSplashScreen Include="Resources\Splash\splashlogopic.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</MauiSplashScreen>
+
+		<!-- Images -->
+		<MauiImage Include="Resources\Images\*" />
+		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
+
+		<!-- Custom Fonts -->
+		<MauiFont Include="Resources\Fonts\*" />
+
+		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiAsset Remove="Resources\Raw\SaarResources.fr.resx" />
+	  <MauiAsset Remove="Resources\Raw\SaarResources.resx" />
+	  <MauiAsset Remove="Resources\Raw\SaarResources.fr.Designer.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
+		<PackageReference Include="Geocoding.Google" Version="4.0.1" />
+		<PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="7.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.96" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="RESTFulSense" Version="2.15.0" /> 
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Resources\Raw\SaarResources.fr.Designer.cs" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Compile Update="Resources\Raw\SaarResources.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>SaarResources.resx</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\Pages\Accounts\LoginPage.xaml.cs">
+	    <DependentUpon>LoginPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiAsset Update="Resources\Raw\SaarResources.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>SaarResources.resx</DependentUpon>
+	  </MauiAsset>
+	  <EmbeddedResource Update="Resources\Raw\SaarResources.fr.resx">
+	    <Generator>PublicResXFileCodeGenerator</Generator>
+	    <LastGenOutput>SaarResources.fr.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\Raw\SaarResources.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>SaarResources.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	</ItemGroup>
+	<ItemGroup>
+	  <None Remove="Models\RegisterRequests\" />
+	  <None Remove="Models\RegisterResponses\" />
+	  <None Remove="Models\PasswordResetRequests\" />
+	  <None Remove="Models\PasswordResetResponses\" />
+	  <None Remove="Models\PasswordResetVerificationRequests\" />
+	  <None Remove="Models\PasswordResetVerificationResponses %28copy%29\" />
+	  <None Remove="Models\ProfileRequests\" />
+	  <None Remove="Platforms\Android\Resources\xml\network_security_config.xml" />
+	  <None Remove="Resources\Images\ic_tracking.png" />
+	  <None Remove="Services\Views\Pages\Cargoes\" />
+	  <None Remove="Services\Views\Pages\Homes\" />
+	  <None Remove="Services\Foundations\Cargoes\" />
+	  <None Remove="Services\Views\Pages\Companies\" />
+	  <None Remove="Services\Views\Pages\Details\" />
+	  <None Remove="Services\Views\Pages\Orders\" />
+	  <None Remove="Services\Foundations\Orders\" />
+	  <None Remove="Services\Views\Pages\Locations\" />
+	  <None Remove="Models\Messengings\Locations\" />
+	  <None Remove="Services\Foundations\Locations\" />
+	  <None Remove="Services\Views\Pages\Notifications\" />
+	  <None Remove="Services\Foundations\Notifications\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Models\RegisterRequests\" />
+	  <Folder Include="Models\RegisterResponses\" />
+	  <Folder Include="Models\PasswordResetRequests\" />
+	  <Folder Include="Models\PasswordResetResponses\" />
+	  <Folder Include="Models\PasswordResetVerificationRequests\" />
+	  <Folder Include="Models\PasswordResetVerifiedResponses\" />
+	  <Folder Include="Services\Views\Pages\Cargoes\" />
+	  <Folder Include="Services\Views\Pages\Homes\" />
+	  <Folder Include="Services\Foundations\Cargoes\" />
+	  <Folder Include="Services\Views\Pages\Companies\" />
+	  <Folder Include="Services\Views\Pages\Details\" />
+	  <Folder Include="Services\Views\Pages\Orders\" />
+	  <Folder Include="Services\Foundations\Orders\" />
+	  <Folder Include="Services\Views\Pages\Locations\" />
+	  <Folder Include="Models\Messengings\Locations\" />
+	  <Folder Include="Services\Foundations\Locations\" />
+	  <Folder Include="Services\Views\Pages\Notifications\" />
+	  <Folder Include="Services\Foundations\Notifications\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <BundleResource Include="Resources\Raw\SaarResources.fr.Designer.cs">
+	    <DependentUpon>SaarResources.fr.resx</DependentUpon>
+	  </BundleResource>
+	  <BundleResource Include="Resources\Raw\SaarResources.fr.Designer.cs">
+	    <LogicalName>SaarResources.fr.Designer.cs</LogicalName>
+	    <DependentUpon>SaarResources.fr.resx</DependentUpon>
+	  </BundleResource>
+	</ItemGroup>
+	<ItemGroup>
+	  <MauiXaml Update="Views\Controls\CompanyControls\CompanyControl.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Controls\MenuItemControls\MenuItemControl.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Controls\ProductControls\ProductControl.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Pages\ComingSoons\ComingSoonPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Pages\Errors\ErrorPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Pages\Products\ProductsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+</Project>

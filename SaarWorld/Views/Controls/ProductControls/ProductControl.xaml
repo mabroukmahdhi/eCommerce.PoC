@@ -1,0 +1,103 @@
+<Border xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        x:Class="SaarWorld.Views.Controls.ProductControls.ProductControl"
+        Grid.Row="0" 
+        Grid.Column="1" 
+        Stroke="#E0D3D0"
+        StrokeThickness="5"
+        StrokeShape="RoundRectangle 8,8,8,8" 
+        BackgroundColor="{StaticResource White}">
+    <Frame BackgroundColor="#ffffff" InputTransparent="True">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.RowSpan="2" 
+                    Grid.Column="0" 
+                    HorizontalOptions="Start" 
+                    HeightRequest="90" 
+                    WidthRequest="90"
+                    Stroke="#dfc4cd"
+                    StrokeThickness="2" 
+                    StrokeShape="RoundRectangle 5,5,5,5">
+                <Image HorizontalOptions="Center" 
+                       HeightRequest="90" 
+                       WidthRequest="90" 
+                       Source="{Binding CartProduct.PictureUrl}"/>
+            </Border>
+
+            <VerticalStackLayout  Grid.Row="0" Grid.Column="1">
+                <Label Text="{Binding CartProduct.Name}"
+                       FontFamily="Cairo"
+                       FontAttributes="Bold"
+                       FontSize="19" 
+                       TextColor="#1D1715" />
+
+                <Label FontFamily="Cairo"
+                       FontSize="12"
+                       FontAutoScalingEnabled="True"
+                       FlowDirection="LeftToRight"
+                       TextColor="#1D1715"
+                       WidthRequest="220" 
+                       Text="{Binding CartProduct.Description}" />
+            </VerticalStackLayout>
+
+            <Grid Grid.Row="2" Grid.Column="1" HeightRequest="40" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Frame Grid.Column="0" 
+                       BackgroundColor="{StaticResource PricePink}" 
+                       Padding="0" 
+                       CornerRadius="2" 
+                       BorderColor="Transparent" 
+                       HorizontalOptions="Start">
+
+                    <HorizontalStackLayout>
+                        <Label Text="{Binding CartProduct.Price}" 
+                               TextColor="{StaticResource Primary}" 
+                               FontAttributes="Bold" 
+                               Padding="10,5,5,5" 
+                               VerticalOptions="CenterAndExpand"/>
+                        <Label Text="{Binding Currency}" 
+                               TextColor="{StaticResource Primary}" 
+                               FontAttributes="Bold" 
+                               Padding="0,5,10,5" 
+                               VerticalOptions="CenterAndExpand"/>
+                    </HorizontalStackLayout>
+                </Frame>
+
+                <Grid Grid.Column="2" 
+                      BackgroundColor="{StaticResource Primary}">
+                    <!-- Initial Buy Button -->
+                    <Button x:Name="BuyButton" 
+                            Text="Buy" 
+                            Command="{Binding BuyCommand}" 
+                            IsVisible="{Binding BuyButtonVisible}"/>
+
+                    <!-- Quantity Controls -->
+                    <StackLayout Orientation="Horizontal" 
+                                 IsVisible="{Binding CountButtonsVisible}">
+                        <Button Text="-" 
+                                Command="{Binding DecCommand}" />
+                        <Label Text="{Binding Count}" 
+                               TextColor="White" 
+                               HorizontalOptions="CenterAndExpand" 
+                               VerticalOptions="CenterAndExpand" />
+                        <Button Text="+" 
+                                Command="{Binding IncCommand}" />
+                    </StackLayout>
+                </Grid>
+            </Grid>
+
+        </Grid>
+    </Frame>
+</Border>

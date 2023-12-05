@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SaarWorld.Views.Pages.Accounts.AccountCreatedPage"
+             Title="AccountCreatedPage"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False">
+    
+    <VerticalStackLayout Margin="10" Spacing="15">
+        <Image Source="packageimage.png"/>
+
+        <StackLayout Spacing="15">
+            <Label
+                Text="{Binding AccountLabelText}"
+                TextColor="{StaticResource Primary}"
+                FontSize="30"
+                FontFamily="Cairo"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                VerticalTextAlignment="Center"
+                HorizontalTextAlignment="Center"
+                Margin="0,0,0,0"/>
+
+            <Label
+                Text="{Binding StartLabelText}"
+                TextColor="{StaticResource Black}"
+                FontFamily="Cairo"
+                FontSize="15"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                VerticalTextAlignment="Center"
+                HorizontalTextAlignment="Center"
+                Margin="0,0,0,0"/>
+        </StackLayout>
+
+        <Button
+                Text="{Binding StartButtonText}"
+                Command="{Binding GoToHomeAsyncCommand}"
+                BackgroundColor="{StaticResource Primary}"
+                FontFamily="Cairo"
+                FontSize="Large"
+                TextColor="White"
+                HorizontalOptions="FillAndExpand"/>
+    </VerticalStackLayout>
+</ContentPage>

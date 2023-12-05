@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="SaarWorld.Views.Pages.AppShells.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:appshells="clr-namespace:SaarWorld.Views.Pages.AppShells"
+    xmlns:homes="clr-namespace:SaarWorld.Views.Pages.Homes"
+    xmlns:auths="clr-namespace:SaarWorld.Views.Pages.Accounts"
+    xmlns:notifs="clr-namespace:SaarWorld.Views.Pages.Notifications"
+    xmlns:orders="clr-namespace:SaarWorld.Views.Pages.Orders" 
+    xmlns:cargoes="clr-namespace:SaarWorld.Views.Pages.Cargoes"
+    xmlns:accounts="clr-namespace:SaarWorld.Views.Pages.Accounts"
+    xmlns:companies="clr-namespace:SaarWorld.Views.Pages.Companies"
+    xmlns:details="clr-namespace:SaarWorld.Views.Pages.Details"
+    xmlns:locations="clr-namespace:SaarWorld.Views.Pages.Locations"
+    FlyoutHeaderBehavior="CollapseOnScroll">
+
+    <TabBar>
+        <ShellContent Title="Home"
+                      ContentTemplate="{DataTemplate homes:HomePage}"
+                      Route="HomePage"
+                      Icon="home.png"/>
+
+        <ShellContent Title="Orders"
+                      ContentTemplate="{DataTemplate orders:OrdersPage}"
+                      Route="OrderPage"
+                      Icon="orders.png"/>
+
+        <ShellContent Title="Notifications"
+                      ContentTemplate="{DataTemplate notifs:NotificationsPage}"
+                      Route="NotificationsPage"
+                      Icon="notifications.png"/>
+
+        <ShellContent Title="Profile"
+                      ContentTemplate="{DataTemplate accounts:ProfilePage}"
+                      Route="ProfilePage"
+                      Icon="profile.png"/>
+    </TabBar>
+
+</Shell>
